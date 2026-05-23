@@ -1,0 +1,77 @@
+.hero {
+  padding: var(--space-xl) 0 0;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--accent-2);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-label .cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: var(--accent-2);
+  animation: blink 0.8s step-end infinite;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 10vw, 8rem);
+  color: var(--text);
+  line-height: 0.95;
+  margin-bottom: var(--space-md);
+}
+
+.hero-title .accent {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-stat {
+  padding: 12px 24px;
+  border: var(--border-thin);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hero-stat .stat-value {
+  color: var(--text);
+  font-weight: 700;
+}

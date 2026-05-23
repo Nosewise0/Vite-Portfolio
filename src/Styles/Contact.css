@@ -1,0 +1,107 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.contact-heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-subtext {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  background: var(--bg-alt);
+  border: var(--border-thin);
+  border-bottom: none;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  background: var(--bg-card);
+  color: var(--text);
+  border: var(--border-thin);
+  outline: none;
+  transition: border-color var(--snap);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--border-muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-submit {
+  margin-top: 2px;
+}
+
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--space-md);
+}
+
+.contact-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm);
+  border: var(--border-thin);
+  background: var(--bg-card);
+  text-decoration: none;
+  color: var(--text);
+  transition: all var(--snap);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-social-link:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  padding: var(--space-sm);
+}
+
+.contact-social-link span:last-child {
+  font-size: 1.2rem;
+}

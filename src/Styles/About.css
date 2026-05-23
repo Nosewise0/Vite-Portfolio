@@ -1,0 +1,88 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.about-text p {
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+}
+
+.about-text .highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.about-status {
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  border: var(--border-accent);
+  background: var(--bg-alt);
+}
+
+.about-status-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.about-status-text {
+  color: var(--text) !important;
+  font-size: 0.85rem;
+}
+
+.about-decoration {
+  border: var(--border-thick);
+  padding: var(--space-md);
+  background: var(--bg-alt);
+  position: relative;
+}
+
+.about-decoration::before {
+  content: "// ABOUT_DATA";
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: var(--bg);
+  padding: 0 8px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.about-info-grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.about-info-item {
+  padding: var(--space-sm);
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.about-info-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.about-info-value {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--space-md);
+}
