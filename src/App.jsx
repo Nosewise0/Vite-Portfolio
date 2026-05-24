@@ -6,7 +6,7 @@ import Projects from "./Projects";
 import Blog from "./Blog";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
       <Blog />
       <Testimonials />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -8,7 +8,7 @@ const INFO_ITEMS = [
   { label: "Languages", value: "JavaScript, Python, HTML/CSS, Lua" },
 ];
 
-const TAGS = ["React", "Node.js", "UI/UX", "Open Source", "MongoDB", "Express", "Vite"];
+const TAGS = ["React", "Node.js", "UI/UX", "MongoDB", "Express", "Vite"];
 
 export default function About() {
   return (

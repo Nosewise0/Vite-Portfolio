@@ -1,3 +1,4 @@
+import "./Styles/NavBar.css";
 import { useState } from "react";
 
 const NAV_LINKS = [
