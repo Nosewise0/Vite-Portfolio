@@ -1,5 +1,6 @@
 import "./Styles/Contact.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,15 +9,42 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setLoading(true);
+    setError("");
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        }
+      );
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      setError("Failed to send message. Please try again.");
+      console.error("EmailJS Error:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -43,21 +71,22 @@ export default function Contact() {
                 <span>GitHub</span>
                 <span>↗</span>
               </a>
-              <a href="https://www.linkedin.com/in/nosewise0" className="contact-social-link">
+              {/* <a href="https://www.linkedin.com/in/nosewise0" className="contact-social-link">
                 <span>LinkedIn</span>
                 <span>↗</span>
-              </a>
-              <a href="https://twitter.com/nosewise0" className="contact-social-link">
+              </a> */}
+              {/* <a href="https://twitter.com/nosewise0" className="contact-social-link">
                 <span>Twitter / X</span>
                 <span>↗</span>
-              </a>
-              <a href="mailto:hello@nonsaker021@gmail.com" className="contact-social-link">
+              </a> */}
+              <a href="#" className="contact-social-link">
                 <span>Email</span>
                 <span>↗</span>
               </a>
             </div>
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
+            {error && <div style={{ color: "red", marginBottom: "1rem" }}>{error}</div>}
             <div className="form-group">
               <label htmlFor="contact-name">Name</label>
               <input
@@ -68,6 +97,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                disabled={loading}
               />
             </div>
             <div className="form-group">
@@ -80,6 +110,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                disabled={loading}
               />
             </div>
             <div className="form-group">
@@ -91,11 +122,17 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                disabled={loading}
               ></textarea>
             </div>
             <div className="form-submit">
-              <button type="submit" className="btn btn--accent" style={{ width: "100%" }}>
-                {submitted ? "// MESSAGE SENT ✓" : "Send Message →"}
+              <button 
+                type="submit" 
+                className="btn btn--accent" 
+                style={{ width: "100%" }}
+                disabled={loading}
+              >
+                {loading ? "// SENDING..." : submitted ? "// MESSAGE SENT ✓" : "Send Message →"}
               </button>
             </div>
           </form>
