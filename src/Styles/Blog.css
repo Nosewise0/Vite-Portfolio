@@ -52,3 +52,14 @@
   background: transparent;
   padding: 0;
 }
+
+@media (max-width: 900px) {
+  .blog-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .blog-read-link {
+    justify-self: start;
+  }
+}

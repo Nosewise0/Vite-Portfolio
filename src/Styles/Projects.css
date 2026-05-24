@@ -86,3 +86,13 @@
   text-transform: uppercase;
   overflow: hidden;
 }
+
+@media (max-width: 900px) {
+  .project-card {
+    grid-template-columns: auto 1fr;
+  }
+
+  .project-image {
+    display: none;
+  }
+}

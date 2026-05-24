@@ -119,3 +119,9 @@
 .skill-card:hover .skill-level-fill {
   background: var(--bg);
 }
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

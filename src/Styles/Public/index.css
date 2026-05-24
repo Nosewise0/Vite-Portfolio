@@ -327,22 +327,6 @@ ul {
 }
 
 @media (max-width: 768px) {
-  .navbar-links,
-  .navbar-status {
-    display: none;
-  }
-
-  .navbar-hamburger {
-    display: flex;
-  }
-
-  .hero-stats {
-    flex-direction: column;
-  }
-
-  .hero-stat {
-    text-align: center;
-  }
 
   .skills-grid {
     grid-template-columns: 1fr;

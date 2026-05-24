@@ -81,3 +81,9 @@
   align-items: center;
   margin-left: auto;
 }
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: var(--space-md);
+  }
+}

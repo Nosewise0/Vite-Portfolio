@@ -5,7 +5,7 @@ const INFO_ITEMS = [
   { label: "Location", value: "Philippines" },
   { label: "Focus", value: "Frontend / Full-Stack" },
   { label: "Education", value: "Self-Taught + Continuous Learning" },
-  { label: "Languages", value: "JavaScript, Python, HTML/CSS, Lua" },
+  { label: "Languages", value: "JavaScript, HTML, CSS" },
 ];
 
 const TAGS = ["React", "Node.js", "UI/UX", "MongoDB", "Express", "Vite"];
